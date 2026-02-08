@@ -1,3 +1,6 @@
+
+package practicafinal;
+
 /**
  * Ingresa y retira saldo de la cuenta
  * @author JuancamiloBR
@@ -6,6 +9,8 @@
 
 public class CCuenta {
 
+    double dSaldo;
+    int contador;
 
     public static void main(String[] args){
         // Depuracion. Se detiene siempre
@@ -34,7 +39,6 @@ public class CCuenta {
 
     public int ingresar(int cantidad) {
         int iCodErr;
-        int dSaldo;
         if (cantidad < 0) {
             System.out.println("No se puede ingresar una cantidad negativa");
             iCodErr = 1;
@@ -43,6 +47,7 @@ public class CCuenta {
             iCodErr = 2;
         } else {
             // Depuracion. Punto de parada. Solo en el 3 ingreso
+            contador++;
             dSaldo = dSaldo + cantidad;
             iCodErr = 0;
         }
@@ -68,7 +73,7 @@ public class CCuenta {
         }
         else
         {
-
+            dSaldo = dSaldo - cantidad;
         }
     }
 
